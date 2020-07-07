@@ -34,7 +34,7 @@ class MakeTeam:
             return '実行できません。チーム分けできる数を指定してください。(チーム数を指定しない場合は、デフォルトで2が指定されます)'
 
         # 使用マップ
-        return ("使用マップは[\n")
+        team.append("使用マップは[\n")
 
         # メンバーリストをシャッフル
         random.shuffle(self.channel_mem)
@@ -67,7 +67,7 @@ class MakeTeam:
             return '実行できません。チーム分けできる数を指定してください。'
 
         # 使用マップ
-        return ("使用マップは[\n")
+        team.append("使用マップは[\n")
 
         # チーム数を取得
         party_num = self.mem_len // specified_len
