@@ -24,7 +24,6 @@ class MakeTeam:
     def make_party_num(self, ctx, party_num, remainder_flag='false'):
         team = []
         remainder = []
-        map_nane = ["BIND(バインド)", "HAVEN(ヘブン)", "SPLIT(スプリット)", "ASCENT(アセント)"]
 
         if self.set_mem(ctx) is False:
             return self.vc_state_err
@@ -34,7 +33,9 @@ class MakeTeam:
             return '実行できません。チーム分けできる数を指定してください。(チーム数を指定しない場合は、デフォルトで2が指定されます)'
 
         # 使用マップ
-        team.append("使用マップは[\n")
+        map_list = ["BIND(バインド)", "HAVEN(ヘブン)", "SPLIT(スプリット)", "ASCENT(アセント)"]
+        map_nane = random.choice(map_list)
+        team.append("使用マップは["+ map_nane +"]です。\n")
 
         # メンバーリストをシャッフル
         random.shuffle(self.channel_mem)
@@ -67,7 +68,9 @@ class MakeTeam:
             return '実行できません。チーム分けできる数を指定してください。'
 
         # 使用マップ
-        team.append("使用マップは[\n")
+        map_list = ["BIND(バインド)", "HAVEN(ヘブン)", "SPLIT(スプリット)", "ASCENT(アセント)"]
+        map_nane = random.choice(map_list)
+        team.append("使用マップは["+ map_nane +"]です。\n")
 
         # チーム数を取得
         party_num = self.mem_len // specified_len
