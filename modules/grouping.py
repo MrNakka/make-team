@@ -83,4 +83,6 @@ class MakeTeam:
             team.append("=====チーム"+str(i+1)+"=====")
             team.extend(self.channel_mem[i:self.mem_len:party_num])
 
-        return ('\n'.join(team))
+        map_msg = "使用マップは["
+
+        return ('\n'.join( map_msg + team))
