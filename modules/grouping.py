@@ -13,7 +13,7 @@ class MakeTeam:
 
     def set_mem(self, ctx):
         state = ctx.author.voice # コマンド実行者のVCステータスを取得
-        if state is None: 
+        if state is None:
             return False
 
         self.channel_mem = [i.name for i in state.channel.members] # VCメンバリスト取得
@@ -50,7 +50,9 @@ class MakeTeam:
             team.append("=====チーム"+str(i+1)+"=====")
             team.extend(self.channel_mem[i:self.mem_len:party_num])
 
-        return ('\n'.join(team))
+        map_msg = "使用マップは["
+
+        return ('\n'.join(map_msg + team))
 
     # チームのメンバー数を指定した場合のチーム分け
     def make_specified_len(self, ctx, specified_len):
