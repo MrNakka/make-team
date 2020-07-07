@@ -33,6 +33,9 @@ class MakeTeam:
         if party_num > self.mem_len or party_num <= 0:
             return '実行できません。チーム分けできる数を指定してください。(チーム数を指定しない場合は、デフォルトで2が指定されます)'
 
+        # 使用マップ
+        return ("使用マップは[\n")
+
         # メンバーリストをシャッフル
         random.shuffle(self.channel_mem)
 
@@ -45,14 +48,10 @@ class MakeTeam:
                 team.append("=====余り=====")
                 team.extend(remainder)
 
-        map_msg = "使用マップは["
-
         # チーム分け
         for i in range(party_num):
             team.append("=====チーム"+str(i+1)+"=====")
             team.extend(self.channel_mem[i:self.mem_len:party_num])
-
-
         return ('\n'.join(team))
 
     # チームのメンバー数を指定した場合のチーム分け
@@ -66,6 +65,9 @@ class MakeTeam:
         # 指定数の確認
         if specified_len > self.mem_len or specified_len <= 0:
             return '実行できません。チーム分けできる数を指定してください。'
+
+        # 使用マップ
+        return ("使用マップは[\n")
 
         # チーム数を取得
         party_num = self.mem_len // specified_len
@@ -81,11 +83,8 @@ class MakeTeam:
             team.append("=====余り=====")
             team.extend(remainder)
 
-        map_msg = "使用マップは["
-
         # チーム分け
         for i in range(party_num):
             team.append("=====チーム"+str(i+1)+"=====")
             team.extend(self.channel_mem[i:self.mem_len:party_num])
-
         return ('\n'.join(team))
