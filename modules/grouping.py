@@ -45,12 +45,13 @@ class MakeTeam:
                 team.append("=====余り=====")
                 team.extend(remainder)
 
+        map_msg = "使用マップは["
+
         # チーム分け
         for i in range(party_num):
             team.append("=====チーム"+str(i+1)+"=====")
             team.extend(self.channel_mem[i:self.mem_len:party_num])
 
-        map_msg = "使用マップは["
 
         return ('\n'.join(map_msg + team))
 
@@ -80,11 +81,11 @@ class MakeTeam:
             team.append("=====余り=====")
             team.extend(remainder)
 
+        map_msg = "使用マップは["
+
         # チーム分け
         for i in range(party_num):
             team.append("=====チーム"+str(i+1)+"=====")
             team.extend(self.channel_mem[i:self.mem_len:party_num])
-
-        map_msg = "使用マップは["
 
         return ('\n'.join(map_msg + team))
