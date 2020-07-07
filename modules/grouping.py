@@ -87,4 +87,4 @@ class MakeTeam:
 
         map_msg = "使用マップは["
 
-        return ('\n'.join( map_msg + team))
+        return ('\n'.join(map_msg + team))
