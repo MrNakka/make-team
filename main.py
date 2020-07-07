@@ -9,7 +9,7 @@ from modules.grouping import MakeTeam
 token = os.environ['DISCORD_BOT_TOKEN']
 bot = commands.Bot(command_prefix='/')
 
-"""起動処理"""
+# """起動処理"""
 @bot.event
 async def on_ready():
     print('-----Logged in info-----')
@@ -18,7 +18,7 @@ async def on_ready():
     print(discord.__version__)
     print('------------------------')
 
-"""コマンド実行"""
+# """コマンド実行"""
 # メンバー数が均等になるチーム分け
 @bot.command()
 async def team(ctx, specified_num=2):
@@ -41,5 +41,5 @@ async def group(ctx, specified_num=1):
     msg = make_team.make_specified_len(ctx,specified_num)
     await ctx.channel.send(msg)
 
-"""botの接続と起動"""
+# """botの接続と起動"""
 bot.run(token)
